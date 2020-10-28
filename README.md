@@ -2,22 +2,23 @@
 
 Projeto full stack de um chat em tempo real (Desktop first) 
 
-### Para testar você pode criar sua própria conta em [LINK](https://chat-turing.web.app/login) 
+### Para testar você pode criar sua própria conta em [LINK](https://chat-turing.web.app) 
 
 ### Objetivos do projeto:
 - Demonstrar conhecimentos na implementação de uma aplicação Fullstack ponta a ponta, do zero e utilizando um banco de dados não relacional.
 
-### Nesta aplicação o usuário poderá:
+### Nesta aplicação o usuário poderá: 👍
 - Criar uma conta;
 - Fazer login para acesso ao app;
 - Fazer login com sua conta do Google;
 - Enviar mensagens para qualquer outro usuário cadastrado;
 - Subir uma imagem para a sua mensagem.
 
-O que poderia melhorar:
+O que poderia melhorar: 
 - Validação dos campos de input;
-- UX, UI.
-- Testes.
+- UX, UI;
+- Testes;
+- O uso de um controlador de estado profundo teria facilitado a implementação, mas o uso excessivo de props foi um desafio interessante.
 
 ## A aplicação está rodando em diversos serviços Google Firebase
 - Autenticações: Firebase Auth
