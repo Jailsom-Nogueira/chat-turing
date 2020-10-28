@@ -13,8 +13,7 @@ import {
   IconInput,
   ImgContainer,
 } from './styles';
-import { StyledButton } from '../../styles/Buttons';
-import { MessageInput } from '../../styles/Inputs';
+import { StyledButton, InputText } from '../../customUiComponents';
 
 const orderingChatId = (id1, id2) => {
   if (id1 > id2) {
@@ -57,7 +56,7 @@ export default function ChatContainer(props) {
     setNewMessage(event.target.value);
   };
 
-  const handleFile = async (event) => {
+  const handleFile = async () => {
     try {
       const file = fileInputRef.current.files[0];
       setFileName(file.name);
@@ -67,9 +66,9 @@ export default function ChatContainer(props) {
   };
 
   const uploadFileAndGetUrl = async () => {
-    const file = fileInputRef.current.files[0];
+    if (fileName) {
+      const file = fileInputRef.current.files[0];
 
-    if (file) {
       const storageRef = firebase.storage().ref();
       const newFileRef = storageRef.child(file.name);
       await newFileRef.put(file);
@@ -100,6 +99,7 @@ export default function ChatContainer(props) {
       })
       .then(() => {
         setNewMessage('');
+        setFileName('');
       });
   };
 
@@ -110,6 +110,7 @@ export default function ChatContainer(props) {
           <h4>Chat with {props.selectedUser.name}</h4>
         </HeaderBox>
       </Header>
+
       <Messages>
         {messages &&
           messages.map((message) => {
@@ -123,12 +124,14 @@ export default function ChatContainer(props) {
             );
           })}
       </Messages>
+
       <MessageForm onSubmit={sendMessage}>
-        <MessageInput
+        <InputText
           placeholder="Nova mensagem"
           value={newMessage}
           onChange={onChangeNewMessage}
         />
+
         <FileInput
           type={'file'}
           ref={fileInputRef}
@@ -139,6 +142,7 @@ export default function ChatContainer(props) {
           <IconInput />
         </label>
         {fileName && <p>{fileName}</p>}
+
         <StyledButton> Send </StyledButton>
       </MessageForm>
     </ChatPageWrapper>

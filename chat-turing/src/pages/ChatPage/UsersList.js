@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import firebase from 'firebase/app';
 
 import { UsersListWrapper, UsersHeader, ChatUserName } from './styles';
-import { StyledButton } from '../../styles/Buttons';
+import { StyledButton, Gap } from '../../customUiComponents';
 
 export default function UsersList(props) {
   const [users, setUsers] = useState();
@@ -42,12 +42,14 @@ export default function UsersList(props) {
   return (
     <UsersListWrapper>
       <UsersHeader>
-        <p>{props.currentUserData?.name}</p>
+        <spam>{props.currentUserData?.name}</spam>
         <StyledButton onClick={onClickLogout}>Logout</StyledButton>
       </UsersHeader>
 
       <hr />
-      <p>Chats</p>
+      <h4>Chats</h4>
+      <Gap />
+
       {users ? (
         users
           .filter((user) => user.id !== props.currentUser?.uid)
