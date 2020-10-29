@@ -18,10 +18,8 @@ export const ChatPageWrapper = styled.div`
 export const Header = styled.div`
   display: flex;
   align-items: center;
-  height: 50px;
   border-bottom: 1px solid lightgray;
-  padding: 14px 8px;
-  background-color: white;
+  padding: 4px 8px;
   color: white;
   font-weight: 600;
 `;
@@ -29,6 +27,9 @@ export const HeaderBox = styled.div`
   background-color: hsl(236, 32%, 26%);
   flex-grow: 1;
   padding-left: 14px;
+  height: 50px;
+  display: flex;
+  align-items: center;
 `;
 export const Messages = styled.div`
   display: flex;
@@ -100,15 +101,21 @@ export const UsersListWrapper = styled.div`
   padding: 0 16px;
   background-color: hsl(236, 32%, 26%);
   color: white;
+
+  h4 {
+    margin: 2rem 0 1rem 0;
+  }
 `;
 export const UsersHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.85rem;
 `;
 export const ChatUserName = styled.div`
   color: white;
-  padding: 2px 8px;
+  padding: 8px 8px;
+  margin-bottom: 1rem;
   border-bottom: 1px solid white;
   font-weight: bolder;
 
@@ -130,8 +137,4 @@ export const ChatIconContainer = styled.div`
 export const ChatIconPlaceholder = styled(Chat)`
   width: 30vw;
   color: hsl(236, 32%, 26%);
-
-  &:hover {
-    color: #3cefff;
-  }
 `;

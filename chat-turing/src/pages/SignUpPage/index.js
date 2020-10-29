@@ -7,6 +7,7 @@ import 'firebase/auth';
 import { useHistory } from 'react-router-dom';
 
 import { FormPageContainer } from '../../components/FormPageContainer';
+import { StyledButton, InputText, Gap } from '../../customUiComponents';
 
 export default function SignUpPage(props) {
   const history = useHistory();
@@ -60,32 +61,33 @@ export default function SignUpPage(props) {
     <FormPageContainer>
       <h1> SignUp </h1>
       <form onSubmit={handleSubmitSignUp}>
-        <input
+        <InputText
           type={'text'}
           name="name"
           value={form.name}
           placeholder={'Nome do usuário'}
           onChange={handleInputChange}
         />
-        <input
+        <InputText
           type={'email'}
           name="email"
           value={form.email}
           placeholder={'Email'}
           onChange={handleInputChange}
         />
-        <input
+        <InputText
           type={'password'}
           name="password"
           value={form.password}
           placeholder={'Password'}
           onChange={handleInputChange}
         />
-
-        <button>SignUp</button>
-        <button type={'button'} onClick={goToLogin}>
+        <Gap />
+        <StyledButton>SignUp</StyledButton>
+        <h4>Or</h4>
+        <StyledButton type={'button'} onClick={goToLogin}>
           Login
-        </button>
+        </StyledButton>
       </form>
     </FormPageContainer>
   );

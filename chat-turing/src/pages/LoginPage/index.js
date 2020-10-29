@@ -6,6 +6,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import { FormPageContainer } from '../../components/FormPageContainer';
+import { StyledButton, InputText } from '../../customUiComponents';
 
 export default function LoginPage(props) {
   const history = useHistory();
@@ -69,27 +70,29 @@ export default function LoginPage(props) {
     <FormPageContainer>
       <h1> Login </h1>
       <form onSubmit={handleSubmitEmail}>
-        <input
+        <InputText
           type={'email'}
           name="email"
           value={form.email}
           placeholder={'Email'}
           onChange={handleInputChange}
         />
-        <input
+        <InputText
           type={'password'}
           name="password"
           value={form.password}
           placeholder={'Password'}
           onChange={handleInputChange}
         />
-        <button>Login with Email</button>
-        <button type={'button'} onClick={googleLogin}>
+
+        <StyledButton>Login with Email</StyledButton>
+        <StyledButton type={'button'} onClick={googleLogin}>
           Login with Google
-        </button>
-        <button type={'button'} onClick={goToSignUp}>
+        </StyledButton>
+        <h4>Or</h4>
+        <StyledButton type={'button'} onClick={goToSignUp}>
           SignUp
-        </button>
+        </StyledButton>
       </form>
     </FormPageContainer>
   );
