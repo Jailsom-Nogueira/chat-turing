@@ -6,7 +6,7 @@
 
 Projeto full stack de um chat em tempo real (Desktop first) 
 
-### Para testar você pode criar sua própria conta em [LINK](https://chat-turing.web.app) 
+### Para testar você pode criar sua própria conta aqui [LINK](https://chat-turing.web.app) 
 
 ### Objetivos do projeto:
 - Demonstrar conhecimentos na implementação de uma aplicação Fullstack ponta a ponta, do zero e utilizando um banco de dados não relacional.
